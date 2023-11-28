@@ -5,8 +5,8 @@ const { camposObrigatoriosLogin } = require('./verificao')
 
 const rotas = express()
 
-rotas.get('/categoria',camposObrigatoriosLogin, listarCategorias)
-rotas.post('/usuario', cadastrarUsuario)
+rotas.get('/categoria', listarCategorias)
+rotas.post('/usuario',camposObrigatoriosLogin, cadastrarUsuario)
 
 module.exports = {
     rotas
