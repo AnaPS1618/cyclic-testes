@@ -1,12 +1,13 @@
-const knex = require("knex");
-const bcrypt = require('bcrypt')
+
+const bcrypt = require('bcrypt');
+const tramiti = require('./conexao');
 
 
 const cadastrarUsuario = async (req, res) => {
     const { nome, email, senha} = req.body;
   
     try {
-        const quantidadeUsuarios = await knex('usuarios').where('email',email).first()
+        const quantidadeUsuarios = await tramiti('usuarios').where('email',email).first()
   
         if (quantidadeUsuarios) {
             return res.status(400).json("O email já existe");

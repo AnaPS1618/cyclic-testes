@@ -1,10 +1,11 @@
-const knex = require("./conexao")
+const tramiti = require("./conexao")
+
 
 const listarCategorias = async (req, res) => {
 
     try{
   
-      const sql = await knex('categorias')
+      const sql = await tramiti('categorias')
                   .returning('*') 
                   .debug()
   
