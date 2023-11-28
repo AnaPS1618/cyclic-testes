@@ -1,7 +1,7 @@
 const knex = require("./conexao")
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const senhaToken = require("../senhaToken");
+//const jwt = require("jsonwebtoken");
+//const senhaToken = require("../senhaToken");
 
 const cadastrarUsuario = async (req, res) => {
   const { nome, email, senha} = req.body;
@@ -54,6 +54,6 @@ const listarCategorias = async (req, res) => {
   }
 
   module.exports = {
-    listarCategorias,
-    cadastrarUsuario
+    listarCategorias
+    //cadastrarUsuario
   }
