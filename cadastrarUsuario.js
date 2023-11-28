@@ -16,7 +16,7 @@ const cadastrarUsuario = async (req, res) => {
         const senhaCriptografada = await bcrypt.hash(senha, 10);
   
   
-        const usuario = await knex('usuarios').insert({ 
+        const usuario = await tramiti('usuarios').insert({ 
           nome: nome, 
           email: email, 
           senha: senhaCriptografada 
