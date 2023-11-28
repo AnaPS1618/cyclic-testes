@@ -1,13 +1,14 @@
-const knex = require("../conexao");
+
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const senhaToken = require("../senhaToken");
+const tramiti = require("./conexao");
 
 const login = async (req, res) => {
   const { email, senha } = req.body;
 
  try {
-   const usuario = await knex("usuarios").where("email", email).first();
+   const usuario = await tramiti("usuarios").where("email", email).first();
 
     if (!usuario) {
       return res.status(404).json("O usuario não foi encontrado");
