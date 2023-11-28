@@ -8,7 +8,7 @@ const loginUsuario = async (req, res) => {
   const { email, senha } = req.body;
 
  try {
-    const usuario = await tramiti("usuarios").where("email", email).first();
+    const usuario = await tramiti("usuarios").where({email: email}).first();
 
     if (!usuario) {
       return res.status(404).json("O usuario não foi encontrado");
@@ -25,7 +25,7 @@ const loginUsuario = async (req, res) => {
     const { senha: _, ...usuarioLogado } = usuario;
 
     return res.status(200).json({
-      usuario: usuarioLogado,
+      usuario,
       token,
    });
   } catch (error) {
