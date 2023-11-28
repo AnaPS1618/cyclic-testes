@@ -8,7 +8,7 @@ const rotas = express()
 
 rotas.get('/categoria', listarCategorias)
 rotas.post('/usuario',camposObrigatoriosLogin, cadastrarUsuario)
-rotas.post('login', login)
+//rotas.post('login', login)
 
 module.exports = {
     rotas
